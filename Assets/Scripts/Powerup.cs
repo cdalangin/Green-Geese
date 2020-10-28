@@ -9,10 +9,12 @@ public class Powerup : MonoBehaviour
     public Sprite Level3;
     public Sprite Level4;
 
+    private bool waterActive;
+
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y >= 10)
+        if (waterActive)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = Level1;
         }
@@ -33,4 +35,10 @@ public class Powerup : MonoBehaviour
         }
 
     }
+
+    public void ActivateWater()
+    {
+        waterActive = true;
+    }
+
 }
